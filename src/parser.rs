@@ -92,8 +92,8 @@ impl<'c> Parser<'c> {
         None
     }
 
-    // Takes until the until searcher matches.
-    // If meanwhile the without searchers matches. The operation is aborted and nothing will be consumed and None will be returned.
+    /// Takes until the until searcher matches.
+    /// If meanwhile the without searchers matches. The operation is aborted and nothing will be consumed and None will be returned.
     pub fn take_until_without(
         &mut self,
         mut until: impl Searcher,
