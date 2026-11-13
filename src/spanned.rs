@@ -22,6 +22,10 @@ impl<T> Spanned<T> {
             inner,
         }
     }
+
+    pub fn map<O>(self, map_fn: impl FnOnce(T) -> O) -> Spanned<O> {
+        Spanned::new(map_fn(self.inner), self.span)
+    }
 }
 impl<T> Deref for Spanned<T> {
     type Target = T;
